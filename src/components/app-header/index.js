@@ -11,7 +11,11 @@ const WYYMusicHeader = memo(() => {
     if(index===3 || index===4) {
       return <a href={item.link}>{item.title}</a>
     } else {
-      return <NavLink to={item.link}>{item.title}</NavLink>
+      return (
+      <NavLink to={item.link}>
+        {item.title}
+        <i className='cor'></i>
+      </NavLink>)
     }
   }
   return (
@@ -32,7 +36,7 @@ const WYYMusicHeader = memo(() => {
         </HeaderLeft>
         <HeaderRight>
           <Input className="search" prefix={<SearchOutlined />} placeholder="音乐/视频/电台/用户" />
-          <Button>创作者中心</Button>
+          <a href='#/' className='create-center'>创作者中心</a>
           <a href="#/">登录</a>
         </HeaderRight>
       </div>
